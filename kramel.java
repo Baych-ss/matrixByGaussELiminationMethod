@@ -1,6 +1,5 @@
 import java.util.Scanner;
 public class Main {
-
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
@@ -13,7 +12,6 @@ public class Main {
         else if(n == 4){
             matrix4x4(n);
         }
-
     }
     //matrix 2x2
     public static void matrix2x2(int n) {
@@ -48,7 +46,6 @@ public class Main {
         System.out.println("x is :" + dx / determinant + "|||  y 2is:" + dy / determinant);
     }
     //matrix 3x3 ///////////////////////////////////////////
-
     public static void matrix3x3(int n) {
         System.out.println("enter matrix 3x3 with answers");
         Scanner scan = new Scanner(System.in);
@@ -83,7 +80,6 @@ public class Main {
                 dx = dxA - dxB + dxC;
             }
         }
-
         //dy////////////////////////
         int dyA = 0;
         int dyB = 0;
@@ -97,7 +93,6 @@ public class Main {
                 dy = dyA - dyB + dyC;
             }
         }
-
         //dz//////////////////////////
         int dzA = 0;
         int dzB = 0;
@@ -120,7 +115,6 @@ public class Main {
         z = dz / determinant;
         System.out.println(x + " " + y + " " + z);
     }
-
     public static void matrix4x4(int n) {
         System.out.println("enter matrix 4x4 with answers");
         Scanner scan = new Scanner(System.in);
@@ -133,77 +127,146 @@ public class Main {
         int determinantA = 0;
         int determinantA1 = 0;
         int determinantA2 = 0;
-
         int determinantB = 0;
         int determinantB1 = 0;
         int determinantB2 = 0;
-
         int determinantC = 0;
         int determinantC1 = 0;
         int determinantC2 = 0;
-
         int determinantD = 0;
         int determinantD1 = 0;
         int determinantD2 = 0;
-
         int determinantAA = 0;
         int determinantBB = 0;
         int determinantCC = 0;
         int determinantDD = 0;
-
         int determinant = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n + 1; j++) {
-                determinantA = ((a[1][1] * (a[2][2] * a[3][3] - a[2][3] * a[3][2])));
-                determinantA1 = ((a[1][2] * (a[2][1] * a[3][3] - a[2][3] * a[3][1])));
-                determinantA2 = ((a[1][3] * (a[2][1] * a[3][2] - a[2][2] * a[3][1])));
-                determinantAA = (a[0][0] * (determinantA - determinantA1 + determinantA2));
-                // //////////////////////////////////////////////
 
-                determinantB = ((a[1][0] * (a[2][2] * a[3][3] - a[2][3] * a[3][2])));
-                determinantB1 = ((a[1][2] * (a[2][0] * a[3][3] - a[2][3] * a[3][0])));
-                determinantB2 = ((a[1][3] * (a[2][0] * a[3][2] - a[2][2] * a[3][0])));
-                determinantBB = (a[0][1] * (determinantB - determinantB1 + determinantB2));
-                // ///////////////////////////////////////////////
+        determinantA = ((a[1][1] * (a[2][2] * a[3][3] - a[2][3] * a[3][2])));
+        determinantA1 = ((a[1][2] * (a[2][1] * a[3][3] - a[2][3] * a[3][1])));
+        determinantA2 = ((a[1][3] * (a[2][1] * a[3][2] - a[2][2] * a[3][1])));
 
-                determinantC = ((a[1][0] * (a[2][1] * a[3][3] - a[2][3] * a[3][1])));
-                determinantC1 = ((a[1][1] * (a[2][0] * a[3][3] - a[2][3] * a[3][0])));
-                determinantC2 = ((a[1][3] * (a[2][0] * a[3][1] - a[2][1] * a[3][0])));
-                determinantCC = (a[0][2] * (determinantC - determinantC1 + determinantC2));
-                // //////////////////////////////////////////////
+        // //////////////////////////////////////////////
+        determinantB = ((a[1][0] * (a[2][2] * a[3][3] - a[2][3] * a[3][2])));
+        determinantB1 = ((a[1][2] * (a[2][0] * a[3][3] - a[2][3] * a[3][0])));
+        determinantB2 = ((a[1][3] * (a[2][0] * a[3][2] - a[2][2] * a[3][0])));
 
-                determinantD = ((a[1][0] * (a[2][1] * a[3][2] - a[2][2] * a[3][1])));
-                determinantD1 = ((a[1][1] * (a[2][0] * a[3][2] - a[2][2] * a[3][0])));
-                determinantD2 = ((a[1][2] * (a[2][0] * a[3][1] - a[2][1] * a[3][0])));
-                determinantDD = (a[0][3] * (determinantD - determinantD1 + determinantD2));
-            }
-        }
+        // ///////////////////////////////////////////////
+        determinantC = ((a[1][0] * (a[2][1] * a[3][3] - a[2][3] * a[3][1])));
+        determinantC1 = ((a[1][1] * (a[2][0] * a[3][3] - a[2][3] * a[3][0])));
+        determinantC2 = ((a[1][3] * (a[2][0] * a[3][1] - a[2][1] * a[3][0])));
+
+        // //////////////////////////////////////////////
+        determinantD = ((a[1][0] * (a[2][1] * a[3][2] - a[2][2] * a[3][1])));
+        determinantD1 = ((a[1][1] * (a[2][0] * a[3][2] - a[2][2] * a[3][0])));
+        determinantD2 = ((a[1][2] * (a[2][0] * a[3][1] - a[2][1] * a[3][0])));
+
+
+        determinantAA = (a[0][0] * (determinantA - determinantA1 + determinantA2));
+        determinantBB = (a[0][1] * (determinantB - determinantB1 + determinantB2));
+        determinantCC = (a[0][2] * (determinantC - determinantC1 + determinantC2));
+        determinantDD = (a[0][3] * (determinantD - determinantD1 + determinantD2));
+
         determinant = determinantAA - determinantBB + determinantCC - determinantDD;
         //dx /////////////////////////////
         int dx = 0;
+
         int dx1 = 0;
         int dx2 = 0;
         int dx3 = 0;
         int dxx = 0;
 
+        int dx11 = 0;
+        int dx12 = 0;
+        int dx13 = 0;
+        int dxx1 = 0;
+
+        int dx21 = 0;
+        int dx22 = 0;
+        int dx23 = 0;
+        int dxx2 = 0;
+
+        int dx31 = 0;
+        int dx32 = 0;
+        int dx33 = 0;
+        int dxx3 = 0;
+
+
         int dy = 0;
+
         int dy1 = 0;
         int dy2 = 0;
         int dy3 = 0;
         int dyy = 0;
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n + 1; j++) {
-                dx1 = (a[1][1] * (a[2][2] * a[3][3] - a[2][3] * a[3][2]));
-                dx2 = (a[1][2] * (a[2][1] * a[3][3] - a[2][3] * a[3][1]));
-                dx3 = (a[1][3] * (a[2][1] * a[3][2] - a[2][2] * a[3][1]));
-                dxx = a[0][4] * (dx1 - dx2 + dx3);
-                dx = dxx / determinant;
-                // /////////////////
 
+        int dy11 = 0;
+        int dy12 = 0;
+        int dy13 = 0;
+        int dyy1 = 0;
 
-            }
+        int dy21 = 0;
+        int dy22 = 0;
+        int dy23 = 0;
+        int dyy2 = 0;
+
+        int dy31 = 0;
+        int dy32 = 0;
+        int dy33 = 0;
+        int dyy3 = 0;
+        {
+            dx1 = (a[1][1] * (a[2][2] * a[3][3] - a[2][3] * a[3][2]));
+            dx2 = (a[1][2] * (a[2][1] * a[3][3] - a[2][3] * a[3][1]));
+            dx3 = (a[1][3] * (a[2][1] * a[3][2] - a[2][2] * a[3][1]));
+            // /////////////////
+            dx11 = (a[1][4] * (a[2][2] * a[3][3] - a[2][3] * a[3][2]));
+            dx12 = (a[1][2] * (a[2][4] * a[3][3] - a[2][3] * a[3][4]));
+            dx13 = (a[1][3] * (a[2][4] * a[3][2] - a[2][2] * a[3][4]));
+            // /////////////////
+            dx21 = (a[1][4] * (a[2][1] * a[3][3] - a[2][3] * a[3][1]));
+            dx22 = (a[1][1] * (a[2][4] * a[3][3] - a[2][3] * a[3][4]));
+            dx23 = (a[1][3] * (a[2][4] * a[3][1] - a[2][1] * a[3][4]));
+            // /////////////////
+            dx31 = (a[1][4] * (a[2][1] * a[3][2] - a[2][2] * a[3][1]));
+            dx32 = (a[1][1] * (a[2][4] * a[3][2] - a[2][2] * a[3][4]));
+            dx33 = (a[1][2] * (a[2][4] * a[3][1] - a[2][1] * a[3][4]));
+            // /////////////////
         }
-        System.out.println(dx);
+        // DY
+        {
+            dy1 = (a[1][4] * (a[2][2] * a[3][3] - a[2][3] * a[3][2]));
+            dy2 = (a[1][2] * (a[2][4] * a[3][3] - a[2][3] * a[3][3]));
+            dy3 = (a[1][3] * (a[2][4] * a[3][2] - a[2][2] * a[3][3]));
+            // /////////////////
+
+            dy11 = (a[1][0] * (a[2][2] * a[3][3] - a[2][3] * a[3][2]));
+            dy12 = (a[1][2] * (a[2][0] * a[3][3] - a[2][3] * a[3][0]));
+            dy13 = (a[1][3] * (a[2][0] * a[3][2] - a[2][2] * a[3][0]));
+            //  ////////////////
+
+            dy21 = (a[1][0] * (a[2][4] * a[3][3] - a[2][3] * a[3][3]));
+            dy22 = (a[1][4] * (a[2][0] * a[3][3] - a[2][3] * a[3][0]));
+            dy23 = (a[1][3] * (a[2][0] * a[3][3] - a[2][4] * a[3][0]));
+            // /////////////////
+
+            dy31 = (a[1][0] * (a[2][4] * a[3][2] - a[2][2] * a[3][3]));
+            dy32 = (a[1][4] * (a[2][0] * a[3][2] - a[2][2] * a[3][0]));
+            dy33 = (a[1][2] * (a[2][0] * a[3][3] - a[2][4] * a[3][0]));
+        }
+        dxx = a[0][4] * (dx1 - dx2 + dx3);
+        dxx1 = a[0][1] * (dx11 - dx12 + dx13);
+        dxx2 = a[0][2] * (dx21 - dx22 + dx23);
+        dxx3 = a[0][3] * (dx31 - dx32 + dx33);
+        dx = dxx - dxx1 + dxx2 - dxx3;
+
+        dyy = a[0][0] * (dy1 - dy2 + dy3);
+        dyy1 = a[0][4] * (dy11 - dy12 + dy13);
+        dyy2 = a[0][2] * (dy21 - dy22 + dy23);
+        dyy3 = a[0][3] * (dy31 - dy32 + dy33);
+        dy = dyy - dyy1 + dyy2 - dyy3;
+
+        System.out.println(determinant);
+        System.out.println(dx / determinant);
+        System.out.println(dy);
     }
 }
 /*
@@ -211,5 +274,20 @@ public class Main {
   2 5 0 3 1
   -1 2 3 5 1
   2 1 -2 3 1
- */
 
+  -2 0 3 0 13
+0 1 0 -3 0
+2 3 -2 0 0
+0 0 -3 2 -15
+
+
+7 6	10 11 11
+11 20 2 19 19
+8 17 3 7 7
+16 3 4 10 10
+
+2 3 11 5 2
+1 1 5 2 1
+2 1 3 2 -3
+1 1 3 4 -3
+ */
