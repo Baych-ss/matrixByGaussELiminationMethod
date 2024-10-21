@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Enter the size of matrix: ");
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         if(n == 2){
@@ -213,6 +214,53 @@ public class Main {
         int dy32 = 0;
         int dy33 = 0;
         int dyy3 = 0;
+
+        int dz = 0;
+
+        int dz1 = 0;
+        int dz2 = 0;
+        int dz3 = 0;
+        int dzz = 0;
+
+        int dz11 = 0;
+        int dz12 = 0;
+        int dz13 = 0;
+        int dzz1 = 0;
+
+        int dz21 = 0;
+        int dz22 = 0;
+        int dz23 = 0;
+        int dzz2 = 0;
+
+        int dz31 = 0;
+        int dz32 = 0;
+        int dz33 = 0;
+        int dzz3 = 0;
+
+
+        int dw = 0;
+
+        int dw1 = 0;
+        int dw2 = 0;
+        int dw3 = 0;
+        int dww = 0;
+
+        int dw11 = 0;
+        int dw12 = 0;
+        int dw13 = 0;
+        int dww1 = 0;
+
+        int dw21 = 0;
+        int dw22 = 0;
+        int dw23 = 0;
+        int dww2 = 0;
+
+        int dw31 = 0;
+        int dw32 = 0;
+        int dw33 = 0;
+        int dww3 = 0;
+
+
         {
             dx1 = (a[1][1] * (a[2][2] * a[3][3] - a[2][3] * a[3][2]));
             dx2 = (a[1][2] * (a[2][1] * a[3][3] - a[2][3] * a[3][1]));
@@ -234,8 +282,8 @@ public class Main {
         // DY
         {
             dy1 = (a[1][4] * (a[2][2] * a[3][3] - a[2][3] * a[3][2]));
-            dy2 = (a[1][2] * (a[2][4] * a[3][3] - a[2][3] * a[3][3]));
-            dy3 = (a[1][3] * (a[2][4] * a[3][2] - a[2][2] * a[3][3]));
+            dy2 = (a[1][2] * (a[2][4] * a[3][3] - a[2][3] * a[3][4]));
+            dy3 = (a[1][3] * (a[2][4] * a[3][2] - a[2][2] * a[3][4]));
             // /////////////////
 
             dy11 = (a[1][0] * (a[2][2] * a[3][3] - a[2][3] * a[3][2]));
@@ -243,15 +291,54 @@ public class Main {
             dy13 = (a[1][3] * (a[2][0] * a[3][2] - a[2][2] * a[3][0]));
             //  ////////////////
 
-            dy21 = (a[1][0] * (a[2][4] * a[3][3] - a[2][3] * a[3][3]));
+            dy21 = (a[1][0] * (a[2][4] * a[3][3] - a[2][3] * a[3][4]));
             dy22 = (a[1][4] * (a[2][0] * a[3][3] - a[2][3] * a[3][0]));
-            dy23 = (a[1][3] * (a[2][0] * a[3][3] - a[2][4] * a[3][0]));
+            dy23 = (a[1][3] * (a[2][0] * a[3][4] - a[2][4] * a[3][0]));
             // /////////////////
 
-            dy31 = (a[1][0] * (a[2][4] * a[3][2] - a[2][2] * a[3][3]));
+            dy31 = (a[1][0] * (a[2][4] * a[3][2] - a[2][2] * a[3][4]));
             dy32 = (a[1][4] * (a[2][0] * a[3][2] - a[2][2] * a[3][0]));
-            dy33 = (a[1][2] * (a[2][0] * a[3][3] - a[2][4] * a[3][0]));
+            dy33 = (a[1][2] * (a[2][0] * a[3][4] - a[2][4] * a[3][0]));
         }
+        // DZ //////////////////////////////////
+        {
+            dz1 = (a[1][1] * (a[2][4] * a[3][3] - a[2][3] * a[3][4]));
+            dz2 = (a[1][4] * (a[2][1] * a[3][3] - a[2][3] * a[3][1]));
+            dz3 = (a[1][3] * (a[2][1] * a[3][4] - a[2][4] * a[3][1]));
+
+            dz11 = (a[1][0] * (a[2][4] * a[3][3] - a[2][3] * a[3][4]));
+            dz12 = (a[1][4] * (a[2][0] * a[3][3] - a[2][3] * a[3][0]));
+            dz13 = (a[1][3] * (a[2][0] * a[3][4] - a[2][4] * a[3][0]));
+
+            dz21 = (a[1][0] * (a[2][1] * a[3][3] - a[2][3] * a[3][1]));
+            dz22 = (a[1][1] * (a[2][0] * a[3][3] - a[2][3] * a[3][0]));
+            dz23 = (a[1][3] * (a[2][0] * a[3][1] - a[2][1] * a[3][0]));
+
+            dz31 = (a[1][0] * (a[2][1] * a[3][4] - a[2][4] * a[3][1]));
+            dz32 = (a[1][1] * (a[2][0] * a[3][4] - a[2][4] * a[3][0]));
+            dz33 = (a[1][4] * (a[2][0] * a[3][1] - a[2][1] * a[3][0]));
+        }
+        // DW ////////////////////////////////////////////////
+        {
+            dw1 = (a[1][1] * (a[2][2] * a[3][4] - a[2][4] * a[3][2]));
+            dw2 = (a[1][2] * (a[2][1] * a[3][4] - a[2][4] * a[3][1]));
+            dw3 = (a[1][4] * (a[2][1] * a[3][2] - a[2][2] * a[3][1]));
+
+            dw11 = (a[1][0] * (a[2][2] * a[3][4] - a[2][4] * a[3][2]));
+            dw12 = (a[1][2] * (a[2][0] * a[3][4] - a[2][4] * a[3][0]));
+            dw13 = (a[1][4] * (a[2][0] * a[3][2] - a[2][2] * a[3][0]));
+
+            dw21 = (a[1][0] * (a[2][1] * a[3][4] - a[2][4] * a[3][1]));
+            dw22 = (a[1][1] * (a[2][0] * a[3][4] - a[2][4] * a[3][0]));
+            dw23 = (a[1][4] * (a[2][0] * a[3][1] - a[2][1] * a[3][0]));
+
+            dw31 = (a[1][0] * (a[2][1] * a[3][2] - a[2][2] * a[3][1]));
+            dw32 = (a[1][1] * (a[2][0] * a[3][2] - a[2][2] * a[3][0]));
+            dw33 = (a[1][2] * (a[2][0] * a[3][1] - a[2][1] * a[3][0]));
+        }
+
+
+
         dxx = a[0][4] * (dx1 - dx2 + dx3);
         dxx1 = a[0][1] * (dx11 - dx12 + dx13);
         dxx2 = a[0][2] * (dx21 - dx22 + dx23);
@@ -264,9 +351,28 @@ public class Main {
         dyy3 = a[0][3] * (dy31 - dy32 + dy33);
         dy = dyy - dyy1 + dyy2 - dyy3;
 
-        System.out.println(determinant);
-        System.out.println(dx / determinant);
-        System.out.println(dy);
+        dzz = a[0][0] * (dz1 - dz2 + dz3);
+        dzz1 = a[0][1] * (dz11 - dz12 + dz13);
+        dzz2 = a[0][4] * (dz21 - dz22 + dz23);
+        dzz3 = a[0][3] * (dz31 - dz32 + dz33);
+        dz = dzz - dzz1 + dzz2 - dzz3;
+
+        dww = a[0][0] * (dw1 - dw2 + dw3);
+        dww1 = a[0][1] * (dw11 - dw12 + dw13);
+        dww2 = a[0][2] * (dw21 - dw22 + dw23);
+        dww3 = a[0][4] * (dw31 - dw32 + dw33);
+        dw = dww - dww1 + dww2 - dww3;
+
+        System.out.println("determinant of matrix is: " + determinant);
+        System.out.println("dx is: " + dx);
+        System.out.println("dy is: " + dy);
+        System.out.println("dz is: " + dz);
+        System.out.println("dw is: " + dw);
+
+        System.out.println("dx/d is: " + dx / determinant);
+        System.out.println("dy/d is: " + dy / determinant);
+        System.out.println("dz/d is: " + dz / determinant);
+        System.out.println("dw/d is: " + dw / determinant);
     }
 }
 /*
